@@ -3,14 +3,6 @@ import matplotlib.pyplot as plt
 
 filename = "regdata.csv"
 
-'''
-E = (1/(2*n)) * ( np.sum((y-w@X.T)**2) )
-print("E = ", E)
-w = w + kappa*( (1/n)*( np.sum( (y-w@X.T).T*X, axis=0, keepdims=True ) ) )
-print("new w = ", w)
-E = (1/(2*n)) * ( np.sum((y-w@X.T)**2) )
-'''
-
 
 def read_file():
     file = open(filename, "r")
@@ -40,7 +32,7 @@ def format_x_y(data):
 
 
 def main():
-    kappa = 0.5
+    kappa = 2.25
     data = read_file()
     data = scale_attributes(data)
     X, y = format_x_y(data)
